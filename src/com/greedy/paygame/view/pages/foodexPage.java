@@ -55,8 +55,9 @@ public class foodexPage extends JPanel {
 			this.setBounds(0, 0, 750, 650);
 
 			/* 패널에 컴포넌트들 삽입 */
-			this.add(logo);
 			this.add(quitBtn);
+			this.add(logo);
+
 		
 			
 			this.add(background);
