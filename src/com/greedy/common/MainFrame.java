@@ -6,7 +6,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
-import com.greedy.paygame.view.pages.foodOver;
+import com.greedy.paygame.view.pages.pimangDrop;
+import com.greedy.paygame.view.pages.pimangOver;
 
 public class MainFrame extends JFrame {
 	
@@ -25,7 +26,9 @@ public class MainFrame extends JFrame {
 //		new LogIn1(this);
 //		new Regist(this);
 //		new RegistCheck(this);
-		new foodOver(this);
+//		new foodOver(this);
+//		new pimangDrop(this);
+		new pimangOver(this);
 		
 		
 		/*프레임창 아이콘*/
