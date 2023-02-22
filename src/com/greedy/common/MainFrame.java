@@ -6,7 +6,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
-import com.greedy.login.RegistCheck;
+import com.greedy.paygame.view.pages.foodOver;
 
 public class MainFrame extends JFrame {
 	
@@ -24,7 +24,8 @@ public class MainFrame extends JFrame {
 //		new LogOut(this);
 //		new LogIn1(this);
 //		new Regist(this);
-		new RegistCheck(this);
+//		new RegistCheck(this);
+		new foodOver(this);
 		
 		
 		/*프레임창 아이콘*/
