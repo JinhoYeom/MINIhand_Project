@@ -5,30 +5,25 @@ import static com.greedy.common.constant.changePanel;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.greedy.common.MainFrame;
-import com.greedy.paygame.view.foodStartMenu;
 
-public class Regist extends JPanel {
+public class RegistFail1 extends JPanel {
 	
 	private MainFrame mf;
-	private JPanel Regist;
+	private JPanel RegistFail1;
 
 	
-	public Regist(MainFrame mf) {
+	public RegistFail1(MainFrame mf) {
 		
 		/*현재 프레임 및 클래스 set*/
 		this.mf = mf;
-		this.Regist = this;
+		this.RegistFail1 = this;
 
 	
     /* JPanel 생성 */
@@ -47,7 +42,6 @@ public class Regist extends JPanel {
 	/* 회원가입 창 */
 	JLabel regist = new JLabel(new ImageIcon("images/ui/login-regist.PNG"));
 	regist.setBounds(40, 60, 650, 500);
-	regist.setHorizontalAlignment(JLabel.CENTER); 		// 수평 가운데 정렬
 	
 	/* 나가기 버튼 */
 	JButton b1 = new JButton(new ImageIcon("images/select/login-registout.PNG"));
@@ -57,7 +51,7 @@ public class Regist extends JPanel {
 	b1.addActionListener(new ActionListener() {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			changePanel(mf, Regist, new LogIn1(mf));
+			changePanel(mf, RegistFail1, new LogIn1(mf));
 		}
 	});
 
@@ -66,6 +60,10 @@ public class Regist extends JPanel {
 	/* 아이디 입력 */
 	TextField idtext = new TextField();
 	idtext.setBounds(220, 200, 450, 45);
+	
+	/* 아이디 입력 경고 */
+	JLabel idfail = new JLabel(new ImageIcon("images/ui/회원가입실패1.PNG"));
+	idfail.setBounds(220, 250, 350, 20);
 	
 	/* 비밀번호 입력 */
 	TextField pwdtext = new TextField();
@@ -84,16 +82,17 @@ public class Regist extends JPanel {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if(idtext.getText().equals("")) {
-				changePanel(mf, Regist, new RegistFail1(mf));
+				changePanel(mf, RegistFail1, new RegistFail1(mf));
 			} else if(pwdtext.getText().equals("")) {
-				changePanel(mf, Regist, new RegistFail2(mf)); 
+				changePanel(mf, RegistFail1, new RegistFail2(mf)); 
 			} else if(nametext.getText().equals("")) {
-				changePanel(mf, Regist, new RegistFail3(mf));
+				changePanel(mf, RegistFail1, new RegistFail3(mf));
 			} else {
-				changePanel(mf, Regist, new RegistCheck(mf));
+				changePanel(mf, RegistFail1, new RegistCheck(mf));
 		}
 		}
 	});
+
 	
 	/* 짱구 그림 */
 	JLabel picture = new JLabel(new ImageIcon("images/ui/Start_짱구.PNG"));
@@ -107,11 +106,12 @@ public class Regist extends JPanel {
 	/* 패널에 컴포넌트 추가 */
 	this.add(b1);			//나가기
 	this.add(b2);			//가입하기
+	this.add(idfail);		//아이디 입력경고
     this.add(idtext);		//아이디 텍스트
     this.add(pwdtext);		//비밀번호 텍스트
-    this.add(nametext);	//닉네임 텍스트
+    this.add(nametext);		//닉네임 텍스트
 	this.add(regist);		//회원가입 창
-    this.add(logo);		//짱구의 하루 라벨
+    this.add(logo);			//짱구의 하루 라벨
     this.add(picture);		//짱구 그림
     this.add(background);	//배경화면
 
@@ -124,5 +124,3 @@ public class Regist extends JPanel {
 
 	}
 }
-
-
