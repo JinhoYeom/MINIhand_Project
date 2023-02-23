@@ -66,7 +66,7 @@ public class RegistFail2 extends JPanel {
 	pwdtext.setBounds(220, 275, 450, 45);
 	
 	/* 비밀번호 입력 경고 */
-	JLabel pwdfail = new JLabel(new ImageIcon("images/ui/회원가입실패2.PNG"));
+	JLabel pwdfail = new JLabel(new ImageIcon("images/ui/입력요구-비밀번호.PNG"));
 	pwdfail.setBounds(220, 325, 350, 20);
 	
 	/* 닉네임 입력 */
