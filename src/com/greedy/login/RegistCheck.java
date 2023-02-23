@@ -1,6 +1,10 @@
 package com.greedy.login;
 
+import static com.greedy.common.constant.changePanel;
+
 import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
@@ -12,6 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.greedy.common.MainFrame;
+import com.greedy.paygame.view.foodStartMenu;
 
 public class RegistCheck extends JPanel{
 	
@@ -49,9 +54,17 @@ public class RegistCheck extends JPanel{
 	registCheck.setBounds(93, 85, 550, 440);
 	registCheck.setHorizontalAlignment(JLabel.CENTER); 		// 수평 가운데 정렬
 	
-	/* 나가기 버튼 */
+	/* 닫기 버튼 */
 	JButton b1 = new JButton(new ImageIcon("images/select/login-registCheckOut.PNG"));
 	b1.setBounds(280, 450, 160, 55);
+	
+	/* 닫기 버튼 클릭 시 로그인 화면으로 이동*/	
+	b1.addActionListener(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			changePanel(mf, RegistCheck, new LogIn1(mf));
+		}
+	});
 
 	
 	/* 아이디 입력 */
