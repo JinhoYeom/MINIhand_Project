@@ -62,7 +62,7 @@ public class RegistFail1 extends JPanel {
 	idtext.setBounds(220, 200, 450, 45);
 	
 	/* 아이디 입력 경고 */
-	JLabel idfail = new JLabel(new ImageIcon("images/ui/회원가입실패1.PNG"));
+	JLabel idfail = new JLabel(new ImageIcon("images/ui/입력요구-아이디.PNG"));
 	idfail.setBounds(220, 250, 350, 20);
 	
 	/* 비밀번호 입력 */

@@ -5,13 +5,9 @@ import static com.greedy.common.constant.changePanel;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -19,16 +15,16 @@ import com.greedy.common.MainFrame;
 import com.greedy.paygame.view.GameMenu;
 import com.greedy.start.StartMenu;
 
-public class LogIn1 extends JPanel{
+public class LogInFail1 extends JPanel{
 	
 	private MainFrame mf;
-	private JPanel LogIn1;
+	private JPanel LogInFail1;
 
-			public LogIn1(MainFrame mf) {
+			public LogInFail1 (MainFrame mf) {
 				
 				/*현재 프레임 및 클래스 set*/
 				this.mf = mf;
-				this.LogIn1 = this;
+				this.LogInFail1 = this;
 
 		    /* JPanel 생성 */
 		    JPanel panel = new JPanel(null);
@@ -45,6 +41,10 @@ public class LogIn1 extends JPanel{
 			/* 아이디 입력 */
 			TextField idtext = new TextField();
 			idtext.setBounds(230, 190, 450, 45);
+			
+			/* 아이디 입력 경고 */
+			JLabel idfail = new JLabel(new ImageIcon("images/ui/입력요구-아이디.PNG"));
+			idfail.setBounds(235, 245, 350, 20);
 			
 			/* 비밀번호 입력 */
 			TextField pwdtext = new TextField();
@@ -63,7 +63,7 @@ public class LogIn1 extends JPanel{
 			b1.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					changePanel(mf, LogIn1, new StartMenu(mf));
+					changePanel(mf, LogInFail1, new StartMenu(mf));
 				}
 			});
 			
@@ -76,11 +76,11 @@ public class LogIn1 extends JPanel{
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					if(idtext.getText().equals("")) {
-						changePanel(mf, LogIn1, new LogInFail1(mf));
+						changePanel(mf, LogInFail1, new LogInFail1(mf));
 					} else if(pwdtext.getText().equals("")) {
-						changePanel(mf, LogIn1, new LogInFail2(mf)); 
+						changePanel(mf, LogInFail1, new LogInFail2(mf)); 
 					} else {
-						changePanel(mf, LogIn1, new GameMenu(mf));
+						changePanel(mf, LogInFail1, new GameMenu(mf));
 				}
 				}
 			});
@@ -93,7 +93,7 @@ public class LogIn1 extends JPanel{
 			b3.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					changePanel(mf, LogIn1, new Regist(mf));
+					changePanel(mf, LogInFail1, new Regist(mf));
 				}
 			});
 			
@@ -112,6 +112,7 @@ public class LogIn1 extends JPanel{
 			this.add(b2);			//확인
 			this.add(b3);			//회원가입
 		    this.add(idtext);		//아이디 텍스트
+		    this.add(idfail);		//아이디 입력 경고
 		    this.add(pwdtext);		//비밀번호 텍스트
 			this.add(logo2);		//로그인 창
 		    this.add(logo);		//짱구의 하루 라벨
@@ -127,3 +128,4 @@ public class LogIn1 extends JPanel{
 
 			}
 		}
+

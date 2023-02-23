@@ -1,5 +1,9 @@
 package com.greedy.start;
 
+import static com.greedy.common.constant.changePanel;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
@@ -11,6 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.greedy.common.MainFrame;
+import com.greedy.login.LogIn1;
 
 public class StartMenu extends JPanel{
 	
@@ -35,9 +40,25 @@ public class StartMenu extends JPanel{
 	JButton b1 = new JButton(new ImageIcon("images/select/Start_startbt.PNG"));
 	b1.setBounds(190, 370, 360, 60);
 	
+	/* 시작하기 버튼 클릭 시 로그인화면으로 이동*/	
+	b1.addActionListener(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			changePanel(mf, StartMenu, new LogIn1(mf));
+		}
+	});
+	
 	/* 종료하기 버튼 */
 	JButton b2 = new JButton(new ImageIcon("images/select/Start_quitbt.PNG"));
 	b2.setBounds(190, 450, 360, 60);
+	
+	/* 나가기 버튼 클릭 시 로그인화면으로 이동*/	
+	b2.addActionListener(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			changePanel(mf, StartMenu, new LogOut(mf));
+		}
+	});
 	
 	/* 짱구 그림 */
 	JLabel picture = new JLabel(new ImageIcon("images/ui/Start_짱구.PNG"));

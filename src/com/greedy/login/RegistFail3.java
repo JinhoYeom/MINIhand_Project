@@ -70,7 +70,7 @@ public class RegistFail3 extends JPanel {
 	nametext.setBounds(220, 350, 450, 45);
 	
 	/* 닉네임 입력 경고 */
-	JLabel namefail = new JLabel(new ImageIcon("images/ui/회원가입실패3.PNG"));
+	JLabel namefail = new JLabel(new ImageIcon("images/ui/입력요구-닉네임.PNG"));
 	namefail.setBounds(220, 400, 350, 20);
 	
 	/* 회원가입 버튼 */
