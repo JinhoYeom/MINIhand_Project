@@ -6,7 +6,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
-import com.greedy.paygame.view.pages.payMoneanswer;
+import com.greedy.paygame.view.pages.payYtwoanswer;
 
 public class MainFrame extends JFrame {
 	
@@ -31,7 +31,7 @@ public class MainFrame extends JFrame {
 //		new pimangOver(this);
 //		new loading(this);
 //		new payStory(this);
-		new payMoneanswer(this);
+		new payYtwoanswer(this);
 		
 		
 		/*프레임창 아이콘*/
