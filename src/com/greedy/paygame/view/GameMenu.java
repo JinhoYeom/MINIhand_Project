@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.greedy.common.MainFrame;
+import com.greedy.login.LogIn1;
 import com.greedy.paygame.view.pages.memberRank;
 
 
@@ -86,11 +87,11 @@ public class GameMenu extends JPanel {
 		JButton quitBtn = new JButton(new ImageIcon("images/select/뒤로가기버튼.png"));
 		quitBtn.setBounds(40, 520, 115, 45);
 		
-		/* 뒤로가기 버튼 클릭 시 시스템 종료*/
+		/* 뒤로가기 버튼 클릭 시 로그인 화면으로 */
 		quitBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				changePanel(mf, gameMenu, new payStartMenu(mf));
+				changePanel(mf, gameMenu, new LogIn1(mf));
 				System.out.println("로그인화면으로 이동합니다.");
 			}
 			
