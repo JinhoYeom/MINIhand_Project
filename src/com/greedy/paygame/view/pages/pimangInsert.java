@@ -14,12 +14,12 @@ import com.greedy.common.MainFrame;
 import com.greedy.paygame.view.GameMenu;
 import com.greedy.paygame.view.foodStartMenu;
 
-public class pimangDrop extends JPanel {
+public class pimangInsert extends JPanel {
 
 	private MainFrame mf;
 	private JPanel pimangDrop;
 
-	public pimangDrop(MainFrame mf) {
+	public pimangInsert(MainFrame mf) {
 
 		/*현재 프레임 및 클래스 set*/
 		this.mf = mf;

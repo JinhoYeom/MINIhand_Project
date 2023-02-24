@@ -87,7 +87,7 @@ public class payStartMenu extends JPanel {
 		});
 		
 		/* 홀짝게임 설명 버튼 생성 */
-		JButton payexBtn = new JButton(new ImageIcon("images/select/홀짝게임설명.png"));
+		JButton payexBtn = new JButton(new ImageIcon("images/select/게임설명.png"));
 		payexBtn.setBounds(550, 450, 150, 55);
 	
 		/* 홀짝게임 설명 버튼 클릭 시 게임설명서 패널로 변경 */
@@ -95,7 +95,7 @@ public class payStartMenu extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				changePanel(mf, paystartMenu, new payexPage(mf));
-				System.out.println("홀짝게임 설명 페이지로 이동합니다.");
+				System.out.println("게임 설명 페이지로 이동합니다.");
 
 			}
 		});

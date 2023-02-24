@@ -44,7 +44,7 @@ public class foodexPage extends JPanel {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					changePanel(mf, foodexPage, new foodStartMenu(mf));
-					System.out.println("홀짝게임 메뉴로 이동합니다.");
+					System.out.println("도시락 게임 메뉴로 이동합니다.");
 
 				}
 			});
