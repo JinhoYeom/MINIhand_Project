@@ -6,7 +6,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
-import com.greedy.paygame.view.pages.foodPlay;
+import com.greedy.paygame.view.pages.payYouget;
 
 public class MainFrame extends JFrame {
 	
@@ -32,7 +32,8 @@ public class MainFrame extends JFrame {
 //		new loading(this);
 //		new payStory(this);
 //		new payYtwoanswer(this);
-		new foodPlay(this);
+//		new foodPlay(this);
+		new payYouget(this);
 		
 		/*프레임창 아이콘*/
 		try {
