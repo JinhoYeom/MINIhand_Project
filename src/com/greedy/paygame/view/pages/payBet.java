@@ -40,8 +40,8 @@ public class payBet extends JPanel {
 			yesBtn.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					changePanel(mf,payBet, new payStartMenu(mf));
-					System.out.println("홀짝게임 메뉴로 이동합니다.");
+					changePanel(mf,payBet, new payStory(mf));
+					System.out.println("스토리로 이동합니다.");
 				}
 			});
 			

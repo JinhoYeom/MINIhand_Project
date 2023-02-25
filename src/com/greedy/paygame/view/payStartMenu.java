@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import com.greedy.common.MainFrame;
 import com.greedy.common.constant;
 import com.greedy.paygame.view.pages.payexPage;
+import com.greedy.paygame.view.pages.paymeHand;
 import com.greedy.paygame.view.pages.payrank;
 
 public class payStartMenu extends JPanel {
@@ -47,11 +48,11 @@ public class payStartMenu extends JPanel {
 		
 
 		
-		/* 게임시작 버튼 클릭 시 맵화면 패널로 변경*/
+		/* 게임시작 버튼 클릭 시 스토리 시작화면 이동 */
 		startBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				changePanel(mf, paystartMenu, new MainMap(mf));
+				changePanel(mf, paystartMenu, new paymeHand(mf));
 				System.out.println("게임시작 가능, 맵 화면 이동");
 			}
 		});
@@ -61,7 +62,7 @@ public class payStartMenu extends JPanel {
 		quitBtn.setBounds(277, 450, 190, 55);
 		
 		
-		/* 나가기 버튼 클릭 시 시스템 종료*/	
+		/* 나가기 버튼 클릭 시 게임메뉴로 이동*/	
 		quitBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {

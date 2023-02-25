@@ -1,17 +1,13 @@
 package com.greedy.paygame.view.pages;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.greedy.common.MainFrame;
-import com.greedy.paygame.view.payStartMenu;
-
-import static com.greedy.common.constant.changePanel;
 
 
 public class paymeHand extends JPanel {
@@ -41,8 +37,18 @@ public class paymeHand extends JPanel {
 		JLabel hand = new JLabel(new ImageIcon("images/ui/우리손.png"));
 		hand.setBounds(150, 100, 650, 620);
 		
+		// 마우스 클릭 이벤트 처리를 위한 MouseListener 등록
+	    this.addMouseListener(new MouseAdapter() {
+	        public void mouseClicked(MouseEvent e) {
+	            // 마우스 클릭 시, 두 번째 페이지로 전환
+	            mf.getContentPane().removeAll(); // 기존 컴포넌트 삭제
+	            JPanel nextPage = new payBet(mf); // 새로운 페이지 생성
+	            mf.getContentPane().add(nextPage); // 새로운 페이지 추가
+	            mf.revalidate(); // 화면 갱신
+	            mf.repaint();
+	        }
+	    });
 		
-	
 
 
 		/* 컴포넌트들 넣을 패널 생성 */
@@ -63,7 +69,6 @@ public class paymeHand extends JPanel {
 		/* 배경이미지 레이어위치 맨뒤로 보내기 */
 		mf.getLayeredPane().setLayer(background, 0);
 	}
-
 
 
 }
