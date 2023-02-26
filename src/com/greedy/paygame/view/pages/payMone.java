@@ -17,6 +17,10 @@ public class payMone extends JPanel {
 			this.mf = mf;
 			this.payMone = this;
 
+//			payBet betPanel = (payBet) mf.getPanel("payBet");
+//	        String inputText = betPanel.getField().getText();
+//	        int inputNumber = Integer.parseInt(inputText);
+      
 			/* 라벨에 배경이미지 삽입*/
 			JLabel background = new JLabel(new ImageIcon("images/background/홀짝배경.png"));
 			background.setBounds(0, 0, 740, 620);
@@ -29,6 +33,15 @@ public class payMone extends JPanel {
 			JLabel Ima = new JLabel(new ImageIcon("images/ui/상대손.png"));
 			Ima.setBounds(0, -150, 650, 620);
 		
+			// 입력한 숫자가 짝수인지 홀수인지 판별
+//	        String whoNum = (inputNumber % 2 == 0) ? "짝" : "홀";
+
+//	        // 화면 전환
+//	        if (whoNum.equals("홀")) {
+//	            changePanel(mf, payMone.this, new payYone(mf));
+//	        } else {
+//	            changePanel(mf, payMone.this, new payYtwo(mf));
+//	        }
 			
 			/* 컴포넌트들 넣을 패널 생성 */
 			this.setLayout(null);
@@ -45,9 +58,6 @@ public class payMone extends JPanel {
 
 			/* 배경이미지 레이어위치 맨뒤로 보내기 */
 			mf.getLayeredPane().setLayer(background, 0);
-			}
+		}
 			
-
-
-		
-	}
+}

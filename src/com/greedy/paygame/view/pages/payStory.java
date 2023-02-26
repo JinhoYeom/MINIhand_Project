@@ -2,16 +2,13 @@ package com.greedy.paygame.view.pages;
 
 import static com.greedy.common.constant.changePanel;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.util.Random;
 
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.greedy.common.MainFrame;
-import com.greedy.paygame.view.payStartMenu;
 
 public class payStory extends JPanel {
 
@@ -52,9 +49,23 @@ public class payStory extends JPanel {
 
 			/* 배경이미지 레이어위치 맨뒤로 보내기 */
 			mf.getLayeredPane().setLayer(background, 0);
-			}
+
+			// 랜덤 숫자 생성 및 홀짝 판별
+        	int randomNumber;
+        	String whoNum;
+        	do {
+        		randomNumber = new Random().nextInt(10) + 1; // 1부터 10까지의 랜덤 숫자 생성
+        		whoNum = (randomNumber % 2 == 0) ? "짝" : "홀";
+        	}	while (whoNum.equals("홀")); // 홀수가 나오면 다시 랜덤 숫자 생성
 			
 
+			// 이동할 화면 선택
+			if (whoNum.equals("홀")) {
+				changePanel(mf, payStory, new payYone(mf));
+			} else {
+		    changePanel(mf, payStory, new payYtwo (mf));
+			}
 
-		
+
+		}
 	}
