@@ -51,7 +51,22 @@ public class payMone extends JPanel {
 
 		/* 배경이미지 레이어위치 맨뒤로 보내기 */
 		mf.getLayeredPane().setLayer(background, 0);
-	}
-
 	
+
+		this.addMouseListener(new MouseAdapter() {
+		public void mouseClicked(MouseEvent e) {
+			 // 1부터 10까지의 난수 생성
+		    int randomNumber = (int) (Math.random() * 10) + 1;
+		    // 입력한 숫자가 짝수인지 홀수인지 판별
+		    String whoNum = (randomNumber % 2 == 0) ? "짝" : "홀";
+
+		    if (whoNum.equals("홀")) {
+		        changePanel(mf, payMone, new payYoneanswer(mf));
+		    } else {
+		        changePanel(mf, payMone, new payYtwoanswer(mf));
+		    }
+		}
+	});
+
+	}
 }
