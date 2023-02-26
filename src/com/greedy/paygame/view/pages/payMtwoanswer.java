@@ -19,7 +19,7 @@ public class payMtwoanswer extends JPanel {
 		private JPanel payMtwoanswer;
 
 		public payMtwoanswer(MainFrame mf) {
-
+			
 			/*현재 프레임 및 클래스 set*/
 			this.mf = mf;
 			this.payMtwoanswer = this;
