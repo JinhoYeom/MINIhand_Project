@@ -1,4 +1,4 @@
-package com.greedy.paygame.view;
+package com.greedy.paygame.view.pages.food;
 
 import static com.greedy.common.constant.changePanel;
 
@@ -13,8 +13,10 @@ import javax.swing.JPanel;
 
 import com.greedy.common.MainFrame;
 import com.greedy.common.constant;
-import com.greedy.paygame.view.pages.foodexPage;
-import com.greedy.paygame.view.pages.foodrank;
+import com.greedy.paygame.view.GameMenu;
+import com.greedy.paygame.view.pages.food.foodPlay;
+import com.greedy.paygame.view.pages.food.foodexPage;
+import com.greedy.paygame.view.pages.food.foodrank;
 
 public class foodStartMenu extends JPanel {
 
@@ -52,8 +54,8 @@ public class foodStartMenu extends JPanel {
 		startBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				changePanel(mf, foodstartMenu, new MainMap(mf));
-				System.out.println("게임시작 가능, 맵 화면 이동");
+				changePanel(mf, foodstartMenu, new foodPlay(mf));
+				System.out.println("게임시작으로 이동");
 			}
 		});
 
