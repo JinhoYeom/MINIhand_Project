@@ -58,24 +58,22 @@ public class payStory extends JPanel {
 			this.addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent e) {
-					mf.getContentPane().removeAll();
-					// 랜덤 숫자 생성 및 홀짝 판별
-		        	int randomNumber;
-		        	String whoNum;
-		        	do {
-		        		randomNumber = new Random().nextInt(10) + 1; // 1부터 10까지의 랜덤 숫자 생성
-		        		whoNum = (randomNumber % 2 == 0) ? "짝" : "홀";
-		        	}	while (whoNum.equals("홀")); // 홀수가 나오면 다시 랜덤 숫자 생성
 				
-					// 이동할 화면 선택
-					if (whoNum.equals("홀")) {
-						changePanel(mf, payStory, new payYone(mf));
-					} else {
-				    changePanel(mf, payStory, new payYtwo (mf));
-					}
-					mf.revalidate(); // 화면 갱신
-					mf.repaint();
+					// 랜덤 숫자 생성 및 홀짝 판별
+					// 1부터 10까지의 난수 생성
+				    int randomNumber = (int) (Math.random() * 10) + 1;
+				    // 입력한 숫자가 짝수인지 홀수인지 판별
+				    String whoNum = (randomNumber % 2 == 0) ? "짝" : "홀";
+
+				    if (whoNum.equals("홀")) {
+				        changePanel(mf, payStory, new payYone(mf));
+				        System.out.println("홀로 이동");
+				    } else { 
+				        changePanel(mf, payStory, new payYtwo(mf));
+				        System.out.println("짝로 이동");
+				    }
 				}
 			});
+				
 		}
 	}

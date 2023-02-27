@@ -26,7 +26,6 @@ public class payYtwo extends JPanel {
 
 		/*현재 프레임 및 클래스 set*/
 		this.mf = mf;
-		this.paybet = new payBet(mf);
 		this.payYtwo = this;
 
 		/* 라벨에 배경이미지 삽입*/

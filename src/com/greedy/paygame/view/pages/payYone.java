@@ -2,33 +2,31 @@ package com.greedy.paygame.view.pages;
 
 import static com.greedy.common.constant.changePanel;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.greedy.common.MainFrame;
-import com.greedy.paygame.view.payStartMenu;
 
 public class payYone extends JPanel {
 
+
 	private MainFrame mf;
 	private JPanel payYone;
-	private payBet paybet;
+	public payBet paybet;
+	
 
 	public  payYone(MainFrame mf) {
 
 		/*현재 프레임 및 클래스 set*/
 		this.mf = mf;
 		this.payYone = this;
-		this.paybet = new payBet(mf);
-	
-
+		
+		ChocoNum Cnum = new ChocoNum();
+		
 		/* 라벨에 배경이미지 삽입*/
 		JLabel background = new JLabel(new ImageIcon("images/background/홀짝배경.png"));
 		background.setBounds(0, 0, 740, 620);
@@ -44,8 +42,9 @@ public class payYone extends JPanel {
 		this.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				
 				// payBet 패널에서 입력한 숫자 가져오기
-				int chocoNum = paybet.getChocoNum();
+				int chocoNum = paybet.CNum();
 				String whoNum = (chocoNum % 2 == 0) ? "짝" : "홀";
 
 				if (whoNum.equals("홀")) {
@@ -56,8 +55,7 @@ public class payYone extends JPanel {
 			}
 
 		});
-
-
+		
 		/* 컴포넌트들 넣을 패널 생성 */
 		this.setLayout(null);
 		this.setBounds(0, 0, 750, 650);
