@@ -1,4 +1,4 @@
-package com.greedy.paygame.view.pages;
+package com.greedy.paygame.view.pages.food;
 
 import static com.greedy.common.constant.changePanel;
 
@@ -11,7 +11,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.greedy.common.MainFrame;
-import com.greedy.paygame.view.foodStartMenu;
 
 
 public class foodrank extends JPanel {

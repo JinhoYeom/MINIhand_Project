@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import com.greedy.common.MainFrame;
 import com.greedy.login.LogIn1;
 import com.greedy.paygame.view.pages.memberRank;
+import com.greedy.paygame.view.pages.food.foodStartMenu;
 
 
 public class GameMenu extends JPanel {
@@ -37,11 +38,11 @@ public class GameMenu extends JPanel {
 		
 		/* 도시락게임 들어가기 버튼 생성 */
 		JButton foodBtn = new JButton(new ImageIcon("images/select/도시락게임들어가기버튼.png"));
-		foodBtn.setBounds(10, 350, 190, 45);
+		foodBtn.setBounds(10, 330, 190, 45);
 
 
 		
-		/* 도시락게임 들어가기 버튼 클릭 시 시스템 종료*/
+		/* 도시락게임 들어가기 버튼 클릭 시 도시락 게임 화면으로 이동*/
 		foodBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -52,7 +53,7 @@ public class GameMenu extends JPanel {
 		
 		/* 홀짝게임 들어가기 버튼 생성 */
 		JButton payBtn = new JButton(new ImageIcon("images/select/홀짝게임들어가기버튼.png"));
-		payBtn.setBounds(560, 350, 160, 45);
+		payBtn.setBounds(560, 330, 160, 45);
 
 
 		

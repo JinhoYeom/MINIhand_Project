@@ -1,4 +1,4 @@
-package com.greedy.paygame.view.pages;
+package com.greedy.paygame.view.pages.food;
 
 import static com.greedy.common.constant.changePanel;
 
@@ -14,7 +14,6 @@ import javax.swing.JPanel;
 import com.greedy.common.MainFrame;
 import com.greedy.common.constant;
 import com.greedy.paygame.view.GameMenu;
-import com.greedy.paygame.view.MainMap;
 
 public class foodPlay extends JPanel {
 
@@ -54,7 +53,8 @@ public class foodPlay extends JPanel {
 		
 		/* 도시락재료 넣기 짱구 그림 */
 		JLabel insertpt = new JLabel(new ImageIcon("images/ui/도시락재료넣기그림.PNG"));
-		insertpt.setBounds(80, 250, 90, 150);
+		insertpt.setBounds(68, 250, 120, 150
+				);
 	
 		/* 도시락재료 버리기 쓰레기통 그림 */
 		JLabel droppt = new JLabel(new ImageIcon("images/ui/도시락재료버리기그림.PNG"));
