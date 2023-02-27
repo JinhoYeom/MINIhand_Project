@@ -52,9 +52,7 @@ public class payBet extends JPanel {
 		yesBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
 				ChocoNum = Integer.parseInt(chocoNumField.getText());
-				 processInput();
 				// 초코비 개수 가져오기
 				// TODO: 걸기 기능 구현
 				changePanel(mf, payBet, new payStory(mf));
@@ -70,8 +68,6 @@ public class payBet extends JPanel {
 		this.add(yesBtn);
 		this.add(logo);
 		this.add(chocoNumField);
-	
-		
 		
 		 Font font = new Font("궁서", Font.BOLD, 20);
 		 chocoNumField.setFont(font);
@@ -85,19 +81,6 @@ public class payBet extends JPanel {
 		mf.getLayeredPane().setLayer(background, 0);
 	}
 	
-	public void processInput() {
-        // 사용자가 입력한 숫자 가져오기
-		int randomNumber = (int) (Math.random() * 100) + 1;
-        // 입력한 숫자가 짝수인지 홀수인지 판별
-        String whoNum = (randomNumber % 2 == 0) ? "짝" : "홀";
-        
-        // 화면 전환
-        if (whoNum.equals("홀")) {
-            changePanel(mf, payBet.this, new payYone(mf));
-        } else {
-            changePanel(mf, payBet.this, new payYtwo(mf));
-        }
-    }
 	
 	PlainDocument doc = new PlainDocument() {
 	    @Override
@@ -117,7 +100,8 @@ public class payBet extends JPanel {
         }
     };
 
-    public int getChocoNum() {
-    	return ChocoNum;
-    }
+
+	public static void getChocoNum(int ChocoNum) {
+		int CNum;
+	}
 }
