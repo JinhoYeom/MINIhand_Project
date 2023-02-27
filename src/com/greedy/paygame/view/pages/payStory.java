@@ -52,8 +52,6 @@ public class payStory extends JPanel {
 			/* 배경이미지 레이어위치 맨뒤로 보내기 */
 			mf.getLayeredPane().setLayer(background, 0);
 
-			
-		
         	
 			this.addMouseListener(new MouseAdapter() {
 				@Override
