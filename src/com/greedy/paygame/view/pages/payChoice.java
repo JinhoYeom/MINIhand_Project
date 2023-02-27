@@ -32,12 +32,12 @@ public class payChoice extends JPanel {
 			JButton oneBtn = new JButton(new ImageIcon("images/select/홀.png"));
 			oneBtn.setBounds(420, 340, 100, 70);
 
-			/* 홀 버튼 클릭 시 시스템 종료*/	
+			/* 홀 버튼 클릭 시 대화로 이동*/	
 			oneBtn.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					changePanel(mf, payChoice, new payStartMenu(mf));
-					System.out.println("홀짝게임 메뉴로 이동합니다.");
+					changePanel(mf, payChoice, new payMone(mf));
+					System.out.println("대화로 이동합니다.");
 
 				}
 			});
@@ -45,12 +45,12 @@ public class payChoice extends JPanel {
 			JButton twoBtn = new JButton(new ImageIcon("images/select/짝.png"));
 			twoBtn.setBounds(540, 340, 100, 70);
 			
-			/* 짝 버튼 클릭 시 시스템 종료*/	
+			/* 짝 버튼 클릭 시 대화로 이동*/	
 			twoBtn.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					changePanel(mf, payChoice, new payStartMenu(mf));
-					System.out.println("홀짝게임 메뉴로 이동합니다.");
+					changePanel(mf, payChoice, new payMtwo(mf));
+					System.out.println("대화로 이동합니다.");
 				}
 			});
 			

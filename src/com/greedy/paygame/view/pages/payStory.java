@@ -2,6 +2,8 @@ package com.greedy.paygame.view.pages;
 
 import static com.greedy.common.constant.changePanel;
 
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.Random;
 
 import javax.swing.ImageIcon;
@@ -50,22 +52,30 @@ public class payStory extends JPanel {
 			/* 배경이미지 레이어위치 맨뒤로 보내기 */
 			mf.getLayeredPane().setLayer(background, 0);
 
-			// 랜덤 숫자 생성 및 홀짝 판별
-        	int randomNumber;
-        	String whoNum;
-        	do {
-        		randomNumber = new Random().nextInt(10) + 1; // 1부터 10까지의 랜덤 숫자 생성
-        		whoNum = (randomNumber % 2 == 0) ? "짝" : "홀";
-        	}	while (whoNum.equals("홀")); // 홀수가 나오면 다시 랜덤 숫자 생성
 			
-
-			// 이동할 화면 선택
-			if (whoNum.equals("홀")) {
-				changePanel(mf, payStory, new payYone(mf));
-			} else {
-		    changePanel(mf, payStory, new payYtwo (mf));
-			}
-
-
+		
+        	
+			this.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					mf.getContentPane().removeAll();
+					// 랜덤 숫자 생성 및 홀짝 판별
+		        	int randomNumber;
+		        	String whoNum;
+		        	do {
+		        		randomNumber = new Random().nextInt(10) + 1; // 1부터 10까지의 랜덤 숫자 생성
+		        		whoNum = (randomNumber % 2 == 0) ? "짝" : "홀";
+		        	}	while (whoNum.equals("홀")); // 홀수가 나오면 다시 랜덤 숫자 생성
+				
+					// 이동할 화면 선택
+					if (whoNum.equals("홀")) {
+						changePanel(mf, payStory, new payYone(mf));
+					} else {
+				    changePanel(mf, payStory, new payYtwo (mf));
+					}
+					mf.revalidate(); // 화면 갱신
+					mf.repaint();
+				}
+			});
 		}
 	}

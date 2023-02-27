@@ -66,9 +66,6 @@ public class paymeHand extends JPanel {
 		});
 
 
-
-
-
 		/* 컴포넌트들 넣을 패널 생성 */
 		this.setLayout(null);
 		this.setBounds(0, 0, 750, 650);
