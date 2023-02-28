@@ -50,18 +50,15 @@ public class payYone extends JPanel {
 		            myChoco = -chocoNum;
 		            yourChoco = +chocoNum;
 		            result1 = "lose";
-		            
+		        	changePanel(mf, payYone, new payMoneanswer(mf));
 		        } else {
 		        	myChoco = +chocoNum;
 		            yourChoco = -chocoNum;
 		            result1 = "win";
+		        	changePanel(mf, payYone, new payMtwoanswer(mf));
 		        }
 
-				if (whoNum.equals("홀")) {
-					changePanel(mf, payYone, new payMoneanswer(mf));
-				} else {
-					changePanel(mf, payYone, new payMtwoanswer(mf));
-				}
+			
 			}
 
 		});

@@ -19,13 +19,14 @@ public class payMoneanswer extends JPanel {
 
 	private MainFrame mf;
 	private JPanel payMoneanswer;
-	
-
+	public String result2 = payYtwo.getresult2();
+	public String result1 = payYone.getresult1();
 	public payMoneanswer(MainFrame mf) {
 
 		/*현재 프레임 및 클래스 set*/
 		this.mf = mf;
 		this.payMoneanswer = this;
+	
 
 		/* 라벨에 배경이미지 삽입*/
 		JLabel background = new JLabel(new ImageIcon("images/background/홀짝배경.png"));
@@ -41,13 +42,11 @@ public class payMoneanswer extends JPanel {
 
 		this.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				String result2 = payYtwo.getresult2();
-				String result1 = payYone.getresult1();
-				if (result1.equals("win")) {
+				if ("win".equals(result1)) {
 					changePanel(mf, payMoneanswer, new payYougive(mf));
-		        } else if(result1.equals("lose")) {
+		        } else if("lose".equals(result1)) {
 		        	changePanel(mf, payMoneanswer, new payMegive(mf));
-		        } else if (result2.equals("win")) {
+		        } else if ("lose".equals(result2)) {
 					changePanel(mf, payMoneanswer, new payMegive(mf));
 		        } else {
 		        	changePanel(mf, payMoneanswer, new payYougive(mf));
