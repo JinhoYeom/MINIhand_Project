@@ -42,7 +42,8 @@ public class payLosePage extends JPanel {
 		replayBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				changePanel(mf, payLosePage, new payStartMenu(mf));
+				// 여기에 payDTO 초기화 구현.
+				changePanel(mf, payLosePage, new paymeHand(mf));
 				System.out.println("홀짝게임 메뉴로 이동합니다.");
 
 			}
