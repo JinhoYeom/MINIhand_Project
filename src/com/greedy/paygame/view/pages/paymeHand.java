@@ -34,7 +34,7 @@ public class paymeHand extends JPanel {
 		/* 라벨에 배경이미지 삽입*/
 		JLabel background = new JLabel(new ImageIcon("images/background/홀짝배경.png"));
 		background.setBounds(0, 0, 740, 620);
-
+		
 		/* 라벨에 상대초코비로고 삽입 */
 		JLabel you = new JLabel(new ImageIcon("images/ui/보유초코비레드.png"));
 		you.setBounds(570, 10, 150, 50);
@@ -91,7 +91,7 @@ public class paymeHand extends JPanel {
 	    this.setComponentZOrder(yourChocoLabel, 0);
 	    
 	    // myBeadLabel의 폰트 설정
-	    Font font = new Font("궁서", Font.BOLD, 20);
+	    Font font = new Font("Rix짱구 M", Font.BOLD, 20);
 	    myChocoLabel.setForeground(Color.WHITE);
 	    myChocoLabel.setFont(font);
 	    yourChocoLabel.setForeground(Color.WHITE);
