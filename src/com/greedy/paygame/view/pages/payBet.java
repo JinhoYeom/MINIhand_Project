@@ -22,9 +22,9 @@ public class payBet extends JPanel {
 	private MainFrame mf;
 	public JPanel payBet;
 	public JTextField chocoNumField; // 초코비 개수 입력받는 필드
-	public int ChocoNum;
+	public static int ChocoNum;
 
-	public  payBet(MainFrame mf) {
+	public payBet(MainFrame mf) {
 
 		/*현재 프레임 및 클래스 set*/
 		this.mf = mf;
@@ -101,7 +101,7 @@ public class payBet extends JPanel {
     };
 
 
-	public static void getChocoNum(int ChocoNum) {
-		int CNum;
+    public static int getChocoNum() {
+		return ChocoNum;
 	}
 }

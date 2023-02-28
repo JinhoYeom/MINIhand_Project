@@ -20,6 +20,7 @@ public class payMone extends JPanel {
 		/*현재 프레임 및 클래스 set*/
 		this.mf = mf;
 		this.payMone = this;
+		
 
 		/* 라벨에 배경이미지 삽입*/
 		JLabel background = new JLabel(new ImageIcon("images/background/홀짝배경.png"));

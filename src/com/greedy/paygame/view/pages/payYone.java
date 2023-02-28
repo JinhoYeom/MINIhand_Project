@@ -16,16 +16,16 @@ public class payYone extends JPanel {
 
 	private MainFrame mf;
 	private JPanel payYone;
-	public payBet paybet;
-	
+	public int myChoco = paymeHand.getmyChoco();
+	public int yourChoco = paymeHand.getyourChoco();
+	public static String result1;
 
-	public  payYone(MainFrame mf) {
+	public payYone(MainFrame mf) {
 
 		/*현재 프레임 및 클래스 set*/
 		this.mf = mf;
 		this.payYone = this;
 		
-		ChocoNum Cnum = new ChocoNum();
 		
 		/* 라벨에 배경이미지 삽입*/
 		JLabel background = new JLabel(new ImageIcon("images/background/홀짝배경.png"));
@@ -44,8 +44,18 @@ public class payYone extends JPanel {
 			public void mouseClicked(MouseEvent e) {
 				
 				// payBet 패널에서 입력한 숫자 가져오기
-				int chocoNum = paybet.CNum();
+				int chocoNum = payBet.getChocoNum();
 				String whoNum = (chocoNum % 2 == 0) ? "짝" : "홀";
+				if (whoNum.equals("홀")) {
+		            myChoco = -chocoNum;
+		            yourChoco = +chocoNum;
+		            result1 = "lose";
+		            
+		        } else {
+		        	myChoco = +chocoNum;
+		            yourChoco = -chocoNum;
+		            result1 = "win";
+		        }
 
 				if (whoNum.equals("홀")) {
 					changePanel(mf, payYone, new payMoneanswer(mf));
@@ -72,7 +82,9 @@ public class payYone extends JPanel {
 		/* 배경이미지 레이어위치 맨뒤로 보내기 */
 		mf.getLayeredPane().setLayer(background, 0);
 
-
-
 	}
+	 public static String getresult1() {
+			return result1;
+		}
+	
 }
