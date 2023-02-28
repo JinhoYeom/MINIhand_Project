@@ -2,8 +2,6 @@ package com.greedy.paygame.view.pages;
 
 import static com.greedy.common.constant.changePanel;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -51,17 +49,13 @@ public class payYtwo extends JPanel {
 		            myChoco = +myChoco;
 		            yourChoco = -yourChoco;
 		            result2 = "win";
+		            changePanel(mf, payYtwo, new payMoneanswer(mf));
 		        } else {
 		        	myChoco = -myChoco;
 		            yourChoco = +yourChoco;
 		            result2 = "lose";
+		            changePanel(mf, payYtwo, new payMtwoanswer(mf));
 		        }
-
-				if (whoNum.equals("홀")) {
-					changePanel(mf, payYtwo, new payMoneanswer(mf));
-				} else {
-					changePanel(mf, payYtwo, new payMtwoanswer(mf));
-				}
 				mf.revalidate(); // 화면 갱신
 				mf.repaint();
 			}

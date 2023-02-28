@@ -19,6 +19,8 @@ public class payMtwoanswer extends JPanel {
 
 		private MainFrame mf;
 		private JPanel payMtwoanswer;
+		public String result2 = payYtwo.getresult2();
+		public String result1 = payYone.getresult1();
 
 		public payMtwoanswer(MainFrame mf) {
 			
@@ -40,13 +42,11 @@ public class payMtwoanswer extends JPanel {
 			
 			this.addMouseListener(new MouseAdapter() {
 				public void mouseClicked(MouseEvent e) {
-					String result2 = payYtwo.getresult2();
-					String result1 = payYone.getresult1();
-					if (result1.equals("win")) {
+					if ("win".equals(result1)) {
 						changePanel(mf, payMtwoanswer, new payYougive(mf));
-			        } else if(result1.equals("lose")) {
+			        } else if("lose".equals(result1)) {
 			        	changePanel(mf, payMtwoanswer, new payMegive(mf));
-			        } else if (result2.equals("win")) {
+			        } else if ("win".equals(result2)) {
 						changePanel(mf, payMtwoanswer, new payMegive(mf));
 			        } else {
 			        	changePanel(mf, payMtwoanswer, new payYougive(mf));
@@ -54,8 +54,7 @@ public class payMtwoanswer extends JPanel {
 					
 					
 				}
-			});
-		
+			});				
 			
 			/* 컴포넌트들 넣을 패널 생성 */
 			this.setLayout(null);

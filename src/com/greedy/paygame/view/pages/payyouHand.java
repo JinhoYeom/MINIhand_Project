@@ -16,8 +16,8 @@ public class payyouHand extends JPanel {
 
 	private MainFrame mf;
 	private JPanel payyouHand;
-	private int myChoco;
-	private int yourChoco; 
+	public int myChoco;
+	public int yourChoco; 
 	// 내 초코비 표시 레이블
 	private JLabel myChocoLabel = new JLabel("" + myChoco);
 	// 상대방 초코비 표시 레이블

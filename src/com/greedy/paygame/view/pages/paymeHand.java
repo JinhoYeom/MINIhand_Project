@@ -100,18 +100,6 @@ public class paymeHand extends JPanel {
 	    
 		
 	}
-	public void decreaseMyBead(int bet) {
-		if (bet <= myChoco && bet <= maxBet) { // 걸 수 있는 최대 개수를 넘지 않고 내 초코비 이하인 경우에만 감소
-			myChoco -= bet;
-			myChocoLabel.setText("내 초코비 개수: " + myChoco); // 레이블 내용 갱신
-		}
-	}
-	public void decreaseYourBead(int bet) {
-		if (bet <= yourChoco && bet <= maxBet) { // 걸 수 있는 최대 개수를 넘지 않고 상대방 초코비 이하인 경우에만 감소
-			yourChoco -= bet;
-			yourChocoLabel.setText("상대방 초코비 개수: " + yourChoco); // 레이블 내용 갱신
-		}
-	}
 
 	  public static int getmyChoco() {
 			return myChoco;
