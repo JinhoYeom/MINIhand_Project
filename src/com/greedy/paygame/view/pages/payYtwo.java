@@ -19,9 +19,10 @@ public class payYtwo extends JPanel {
 
 	private MainFrame mf;
 	private JPanel payYtwo;
-	private payBet paybet;
+	public int myChoco = paymeHand.getmyChoco();
+	public int yourChoco = paymeHand.getyourChoco();
+	public static String result2;
 	
-
 	public  payYtwo(MainFrame mf) {
 
 		/*현재 프레임 및 클래스 set*/
@@ -44,8 +45,17 @@ public class payYtwo extends JPanel {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				// payBet 패널에서 입력한 숫자 가져오기
-				int chocoNum = paybet.getChocoNum();
+				int chocoNum = payBet.getChocoNum();
 				String whoNum = (chocoNum % 2 == 0) ? "짝" : "홀";
+				if (whoNum.equals("홀")) {
+		            myChoco = +myChoco;
+		            yourChoco = -yourChoco;
+		            result2 = "win";
+		        } else {
+		        	myChoco = -myChoco;
+		            yourChoco = +yourChoco;
+		            result2 = "lose";
+		        }
 
 				if (whoNum.equals("홀")) {
 					changePanel(mf, payYtwo, new payMoneanswer(mf));
@@ -73,9 +83,9 @@ public class payYtwo extends JPanel {
 		/* 배경이미지 레이어위치 맨뒤로 보내기 */
 		mf.getLayeredPane().setLayer(background, 0);
 
-
-
-
 	}
 	
+	 public static String getresult2() {
+			return result2;
+		}
 }

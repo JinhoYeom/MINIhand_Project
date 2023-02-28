@@ -4,6 +4,8 @@ import static com.greedy.common.constant.changePanel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -35,6 +37,24 @@ public class payMtwoanswer extends JPanel {
 			/* 라벨에 우리손 삽입*/
 			JLabel Ima = new JLabel(new ImageIcon("images/ui/우리손.png"));
 			Ima.setBounds(150, 100, 650, 620);
+			
+			this.addMouseListener(new MouseAdapter() {
+				public void mouseClicked(MouseEvent e) {
+					String result2 = payYtwo.getresult2();
+					String result1 = payYone.getresult1();
+					if (result1.equals("win")) {
+						changePanel(mf, payMtwoanswer, new payYougive(mf));
+			        } else if(result1.equals("lose")) {
+			        	changePanel(mf, payMtwoanswer, new payMegive(mf));
+			        } else if (result2.equals("win")) {
+						changePanel(mf, payMtwoanswer, new payMegive(mf));
+			        } else {
+			        	changePanel(mf, payMtwoanswer, new payYougive(mf));
+			        }
+					
+					
+				}
+			});
 		
 			
 			/* 컴포넌트들 넣을 패널 생성 */

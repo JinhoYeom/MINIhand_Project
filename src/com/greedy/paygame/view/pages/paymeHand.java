@@ -113,6 +113,12 @@ public class paymeHand extends JPanel {
 		}
 	}
 
+	  public static int getmyChoco() {
+			return myChoco;
+		}
+	  public static int getyourChoco() {
+			return yourChoco;
+		}
 }
 
 
