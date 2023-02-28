@@ -10,11 +10,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.greedy.common.MainFrame;
+import com.greedy.paygame.view.DTO.payDTO;
 
 public class payMtwo extends JPanel {
 
 	private MainFrame mf;
 	private JPanel payMtwo;
+	private int myChoco;
+	private int yourChoco;
+	public static String result3;
 
 	public  payMtwo(MainFrame mf) {
 
@@ -22,6 +26,12 @@ public class payMtwo extends JPanel {
 		this.mf = mf;
 		this.payMtwo = this;
 
+		payDTO paydto = new payDTO();
+
+		/* payDTO에서 myChoco와 yourChoco값을 가져와서 클래스 변수에 저장 */
+		myChoco = paydto.getMyChoco();
+		yourChoco = paydto.getYourChoco();
+		
 		/* 라벨에 배경이미지 삽입*/
 		JLabel background = new JLabel(new ImageIcon("images/background/홀짝배경.png"));
 		background.setBounds(0, 0, 740, 620);
@@ -58,13 +68,23 @@ public class payMtwo extends JPanel {
 				String whoNum = (randomNumber % 2 == 0) ? "짝" : "홀";
 
 				if (whoNum.equals("홀")) {
+					myChoco = -randomNumber;
+		            yourChoco = +randomNumber;
+		            result3 = "lose";
 					changePanel(mf, payMtwo, new payYoneanswer(mf));
+					
 				} else {
+					myChoco = +randomNumber;
+		            yourChoco = -randomNumber;
+		            result3 = "win";
 					changePanel(mf, payMtwo, new payYtwoanswer(mf));
 				}
 			}
 		});
 
+	}
+	public static String getresult3() {
+		return result3;
 	}
 }
 

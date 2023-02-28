@@ -17,19 +17,19 @@ import com.greedy.common.MainFrame;
 
 
 
-public class payYougive extends JPanel {
+public class payYYougive extends JPanel {
 	int chocoNum = payBet.getChocoNum();// 다른 클래스에서 초콜릿 개수를 가져옴
 	private MainFrame mf;
-	private JPanel payYougive;
+	private JPanel payYYougive;
 	
 	
-	public payYougive(MainFrame mf) {
+	public payYYougive(MainFrame mf) {
 	
 		
 
 		/*현재 프레임 및 클래스 set*/
 		this.mf = mf;
-		this.payYougive = this;
+		this.payYYougive = this;
 		
 
 		/* 라벨에 배경이미지 삽입*/
@@ -57,7 +57,7 @@ public class payYougive extends JPanel {
 			public void mouseClicked(MouseEvent e) {
 				// 마우스 클릭 시, 두 번째 페이지로 전환
 				mf.getContentPane().removeAll(); // 기존 컴포넌트 삭제
-				JPanel nextPage = new payMeget(mf); // 새로운 페이지 생성
+				JPanel nextPage = new payMMeget(mf); // 새로운 페이지 생성
 				mf.getContentPane().add(nextPage); // 새로운 페이지 추가
 				mf.revalidate(); // 화면 갱신
 				mf.repaint();

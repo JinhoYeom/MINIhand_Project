@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 
 import com.greedy.common.MainFrame;
 import com.greedy.common.constant;
+import com.greedy.paygame.view.DTO.payDTO;
 import com.greedy.paygame.view.pages.payexPage;
 import com.greedy.paygame.view.pages.paymeHand;
 import com.greedy.paygame.view.pages.payrank;

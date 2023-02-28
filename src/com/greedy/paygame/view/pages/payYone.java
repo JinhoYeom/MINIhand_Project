@@ -10,14 +10,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.greedy.common.MainFrame;
+import com.greedy.paygame.view.DTO.payDTO;
 
 public class payYone extends JPanel {
 
 
 	private MainFrame mf;
 	private JPanel payYone;
-	public int myChoco = paymeHand.getmyChoco();
-	public int yourChoco = paymeHand.getyourChoco();
+	public int myChoco;
+	public int yourChoco;
 	public static String result1;
 
 	public payYone(MainFrame mf) {
@@ -25,6 +26,13 @@ public class payYone extends JPanel {
 		/*현재 프레임 및 클래스 set*/
 		this.mf = mf;
 		this.payYone = this;
+		
+		/* payDTO 인스턴스 생성 */
+		payDTO paydto = new payDTO();
+
+		/* payDTO에서 myChoco와 yourChoco값을 가져와서 클래스 변수에 저장 */
+		myChoco = paydto.getMyChoco();
+		yourChoco = paydto.getYourChoco();
 		
 		
 		/* 라벨에 배경이미지 삽입*/

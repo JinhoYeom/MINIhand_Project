@@ -1,25 +1,38 @@
 package com.greedy.paygame.view.pages;
 
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-
-import com.greedy.common.MainFrame;
 import static com.greedy.common.constant.changePanel;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import com.greedy.common.MainFrame;
+import com.greedy.paygame.view.DTO.payDTO;
+
 public class payMone extends JPanel {
 
 	private MainFrame mf;
 	private JPanel payMone;
+	private int myChoco;
+	private int yourChoco;	
+	public static String result4;
+
 
 	public  payMone(MainFrame mf) {
 
 		/*현재 프레임 및 클래스 set*/
 		this.mf = mf;
 		this.payMone = this;
+		
+		/* payDTO 인스턴스 생성 */
+		payDTO paydto = new payDTO();
+
+		/* payDTO에서 myChoco와 yourChoco값을 가져와서 클래스 변수에 저장 */
+		myChoco = paydto.getMyChoco();
+		yourChoco = paydto.getYourChoco();
 		
 
 		/* 라벨에 배경이미지 삽입*/
@@ -62,12 +75,21 @@ public class payMone extends JPanel {
 		    String whoNum = (randomNumber % 2 == 0) ? "짝" : "홀";
 
 		    if (whoNum.equals("홀")) {
+		    	myChoco = +randomNumber;
+	            yourChoco = -randomNumber;
+	            result4 = "win";
 		        changePanel(mf, payMone, new payYoneanswer(mf));
 		    } else {
+		    	myChoco = -randomNumber;
+	            yourChoco = +randomNumber;
+	            result4 = "lose";
 		        changePanel(mf, payMone, new payYtwoanswer(mf));
 		    }
 		}
 	});
 
+	}
+	public static String getresult4() {
+		return result4;
 	}
 }
