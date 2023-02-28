@@ -31,8 +31,8 @@ public class payYone extends JPanel {
 		payDTO paydto = new payDTO();
 
 		/* payDTO에서 myChoco와 yourChoco값을 가져와서 클래스 변수에 저장 */
-		myChoco = paydto.getMyChoco();
-		yourChoco = paydto.getYourChoco();
+		paydto.setMyChoco(myChoco);
+		paydto.setYourChoco(yourChoco);
 		
 		
 		/* 라벨에 배경이미지 삽입*/

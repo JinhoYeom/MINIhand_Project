@@ -22,9 +22,9 @@ public class payyouHand extends JPanel {
 	
 	
 	// 내 초코비 표시 레이블
-	private JLabel myChocoLabel = new JLabel("" + myChoco);
+	private JLabel myChocoLabel = new JLabel();
 	// 상대방 초코비 표시 레이블
-	private JLabel yourChocoLabel = new JLabel("" + yourChoco);
+	private JLabel yourChocoLabel = new JLabel();
 
 	public payyouHand(MainFrame mf) {
 
@@ -56,9 +56,11 @@ public class payyouHand extends JPanel {
 		
 			// 내 구슬 개수 레이블 위치 지정
 			myChocoLabel.setBounds(685, 10, 150, 50);
+			myChocoLabel.setText("" + myChoco);
 			
 			// 상대방 구슬 개수 레이블 위치 지정
 			yourChocoLabel.setBounds(130, 550, 150, 50);
+			yourChocoLabel.setText("" + yourChoco);
 
 			// 마우스 클릭 이벤트 처리를 위한 MouseListener 등록
 			this.addMouseListener(new MouseAdapter() {
