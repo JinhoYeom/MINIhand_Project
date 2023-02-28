@@ -6,8 +6,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
-
-import com.greedy.paygame.view.GameMenu;
+import com.greedy.start.StartMenu;
 
 
 public class MainFrame extends JFrame {
@@ -20,7 +19,7 @@ public class MainFrame extends JFrame {
 		this.setLocationRelativeTo(null);	//창 가운데에 나오도록
 		
 
-//		new StartMenu(this);     //시작
+		new StartMenu(this);     //시작
 //		new payStartMenu(this);
 //	  new GameMenu(this);
 //		new foodStartMenu(this);

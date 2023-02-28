@@ -6,6 +6,7 @@ import static com.greedy.common.constant.changePanel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -15,7 +16,7 @@ import javax.swing.JPanel;
 import com.greedy.common.MainFrame;
 import com.greedy.login.LogIn1;
 import com.greedy.paygame.view.pages.memberRank;
-import com.greedy.paygame.view.pages.food.foodStartMenu;
+import com.greedy.food.foodStartMenu;
 
 
 public class GameMenu extends JPanel {
@@ -30,6 +31,8 @@ public class GameMenu extends JPanel {
 		/*현재 프레임 및 클래스 set*/
 		this.mf = mf;
 		this.gameMenu = this;
+		
+		
 
 		/* 라벨에 배경이미지 삽입*/
 		JLabel background = new JLabel(new ImageIcon("images/background/게임메인배경.png"));
@@ -116,6 +119,5 @@ public class GameMenu extends JPanel {
 		/* 배경이미지 레이어위치 맨뒤로 보내기 */
 		mf.getLayeredPane().setLayer(background, 0);
 	}
-
-
+	
 }
