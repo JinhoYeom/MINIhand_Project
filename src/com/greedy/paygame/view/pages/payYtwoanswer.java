@@ -1,5 +1,10 @@
 package com.greedy.paygame.view.pages;
 
+import static com.greedy.common.constant.changePanel;
+
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -10,6 +15,8 @@ public class payYtwoanswer extends JPanel {
 
 		private MainFrame mf;
 		private JPanel payYtwoanswer;
+		public String result3 = payMtwo.getresult3();
+		public String result4 = payMone.getresult4();
 
 		public  payYtwoanswer(MainFrame mf) {
 
@@ -28,8 +35,23 @@ public class payYtwoanswer extends JPanel {
 			/* 라벨에 우리손 삽입*/
 			JLabel Ima = new JLabel(new ImageIcon("images/ui/상대손.png"));
 			Ima.setBounds(0, -150, 650, 620);
-		
 			
+			this.addMouseListener(new MouseAdapter() {
+				public void mouseClicked(MouseEvent e) {
+					if ("win".equals(result3)) {
+						changePanel(mf, payYtwoanswer, new payYYougive(mf));
+					} else if("lose".equals(result3)) {
+						changePanel(mf, payYtwoanswer, new payMMegive(mf));
+					} else if ("lose".equals(result4)) {
+						changePanel(mf, payYtwoanswer, new payMMegive(mf));
+					} else {
+						changePanel(mf, payYtwoanswer, new payYYougive(mf));
+					}
+
+
+				}
+			});
+
 			/* 컴포넌트들 넣을 패널 생성 */
 			this.setLayout(null);
 			this.setBounds(0, 0, 750, 650);

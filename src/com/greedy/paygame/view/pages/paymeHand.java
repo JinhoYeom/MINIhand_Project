@@ -10,16 +10,17 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.greedy.common.MainFrame;
+import com.greedy.paygame.view.DTO.payDTO;
 
 
 public class paymeHand extends JPanel {
+	
 
 	private MainFrame mf;
 	private JPanel paymeHand;
-	private static int myChoco = 20; // 내 초코비 초기값
-	private static int yourChoco = 20; // 상대방 초코비 초기값
-	private int maxBet = 10; // 최대 걸 수 있는 개수
-
+	private int myChoco;
+	private int yourChoco;
+	
 	// 내 초코비 표시 레이블
 	private JLabel myChocoLabel = new JLabel("" + myChoco);
 	// 상대방 초코비 표시 레이블
@@ -30,7 +31,14 @@ public class paymeHand extends JPanel {
 		/*현재 프레임 및 클래스 set*/
 		this.mf = mf;
 		this.paymeHand = this;
+		
+		/* payDTO 인스턴스 생성 */
+		payDTO paydto = new payDTO();
 
+		/* payDTO에서 myChoco와 yourChoco값을 가져와서 클래스 변수에 저장 */
+		myChoco = paydto.getMyChoco();
+		yourChoco = paydto.getYourChoco();
+		
 		/* 라벨에 배경이미지 삽입*/
 		JLabel background = new JLabel(new ImageIcon("images/background/홀짝배경.png"));
 		background.setBounds(0, 0, 740, 620);
@@ -98,16 +106,9 @@ public class paymeHand extends JPanel {
 	    yourChocoLabel.setFont(font);
 	    
 	    
-		
+		}
 	}
 
-	  public static int getmyChoco() {
-			return myChoco;
-		}
-	  public static int getyourChoco() {
-			return yourChoco;
-		}
-}
 
 
 
