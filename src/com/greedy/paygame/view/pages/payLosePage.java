@@ -48,7 +48,6 @@ public class payLosePage extends JPanel {
 				pdto.setYourChoco(20);
 				changePanel(mf, payLosePage, new paymeHand(mf, pdto));
 				System.out.println("홀짝게임 메뉴로 이동합니다.");
-
 			}
 		});
 		

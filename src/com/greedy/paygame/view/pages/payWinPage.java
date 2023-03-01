@@ -44,9 +44,12 @@ public class payWinPage extends JPanel {
 		replayBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+
 				pdto.setMyChoco(20);
 				pdto.setYourChoco(20);
+
 				changePanel(mf, payWinPage, new paymeHand(mf, pdto));
+
 				System.out.println("홀짝게임 메뉴로 이동합니다.");
 				
 			}
