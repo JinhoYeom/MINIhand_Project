@@ -21,20 +21,12 @@ public class payYone extends JPanel {
 	public int yourChoco;
 	public static String result1;
 
-	public payYone(MainFrame mf) {
+	public payYone(MainFrame mf, payDTO pdto) {
 
 		/*현재 프레임 및 클래스 set*/
 		this.mf = mf;
 		this.payYone = this;
-		
-		/* payDTO 인스턴스 생성 */
-		payDTO paydto = new payDTO();
-
-		/* payDTO에서 myChoco와 yourChoco값을 가져와서 클래스 변수에 저장 */
-		paydto.setMyChoco(myChoco);
-		paydto.setYourChoco(yourChoco);
-		
-		
+			
 		/* 라벨에 배경이미지 삽입*/
 		JLabel background = new JLabel(new ImageIcon("images/background/홀짝배경.png"));
 		background.setBounds(0, 0, 740, 620);
@@ -55,15 +47,15 @@ public class payYone extends JPanel {
 				int chocoNum = payBet.getChocoNum();
 				String whoNum = (chocoNum % 2 == 0) ? "짝" : "홀";
 				if (whoNum.equals("홀")) {
-		            myChoco = -chocoNum;
-		            yourChoco = +chocoNum;
+		            pdto.setMyChoco(pdto.getMyChoco()-chocoNum);
+		            pdto.setYourChoco(pdto.getYourChoco()+chocoNum);
 		            result1 = "lose";
-		        	changePanel(mf, payYone, new payMoneanswer(mf));
+		        	changePanel(mf, payYone, new payMoneanswer(mf, pdto));
 		        } else {
-		        	myChoco = +chocoNum;
-		            yourChoco = -chocoNum;
+		        	pdto.setMyChoco(pdto.getMyChoco()+chocoNum);
+		            pdto.setYourChoco(pdto.getYourChoco()-chocoNum);
 		            result1 = "win";
-		        	changePanel(mf, payYone, new payMtwoanswer(mf));
+		        	changePanel(mf, payYone, new payMtwoanswer(mf, pdto));
 		        }
 
 			

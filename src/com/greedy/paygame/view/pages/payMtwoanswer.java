@@ -2,18 +2,15 @@ package com.greedy.paygame.view.pages;
 
 import static com.greedy.common.constant.changePanel;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.greedy.common.MainFrame;
-import com.greedy.paygame.view.payStartMenu;
+import com.greedy.paygame.view.DTO.payDTO;
 
 public class payMtwoanswer extends JPanel {
 
@@ -22,7 +19,7 @@ public class payMtwoanswer extends JPanel {
 		public String result2 = payYtwo.getresult2();
 		public String result1 = payYone.getresult1();
 
-		public payMtwoanswer(MainFrame mf) {
+		public payMtwoanswer(MainFrame mf, payDTO pdto) {
 			
 			/*현재 프레임 및 클래스 set*/
 			this.mf = mf;
@@ -43,13 +40,13 @@ public class payMtwoanswer extends JPanel {
 			this.addMouseListener(new MouseAdapter() {
 				public void mouseClicked(MouseEvent e) {
 					if ("win".equals(result1)) {
-						changePanel(mf, payMtwoanswer, new payYougive(mf));
+						changePanel(mf, payMtwoanswer, new payYougive(mf, pdto));
 			        } else if("lose".equals(result1)) {
-			        	changePanel(mf, payMtwoanswer, new payMegive(mf));
+			        	changePanel(mf, payMtwoanswer, new payMegive(mf, pdto));
 			        } else if ("win".equals(result2)) {
-						changePanel(mf, payMtwoanswer, new payMegive(mf));
+						changePanel(mf, payMtwoanswer, new payMegive(mf, pdto));
 			        } else {
-			        	changePanel(mf, payMtwoanswer, new payYougive(mf));
+			        	changePanel(mf, payMtwoanswer, new payYougive(mf, pdto));
 			        }
 					
 					

@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
+import static com.greedy.common.constant.changePanel;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -18,26 +18,26 @@ public class paymeHand extends JPanel {
 
 	private MainFrame mf;
 	private JPanel paymeHand;
-	public int myChoco;
-	public int yourChoco;
+//	public int myChoco;
+//	public int yourChoco;
 	
 	// 내 초코비 표시 레이블
 	private JLabel myChocoLabel = new JLabel();
 	// 상대방 초코비 표시 레이블
 	private JLabel yourChocoLabel = new JLabel();
 
-	public paymeHand(MainFrame mf) {
+	public paymeHand(MainFrame mf, payDTO pdto) {
 
 		/*현재 프레임 및 클래스 set*/
 		this.mf = mf;
 		this.paymeHand = this;
 		
 		/* payDTO 인스턴스 생성 */
-		payDTO paydto = new payDTO();
+//		payDTO paydto = new payDTO();
 
 		/* payDTO에서 myChoco와 yourChoco값을 가져와서 클래스 변수에 저장 */
-		myChoco = paydto.getMyChoco();
-		yourChoco = paydto.getYourChoco();
+//		myChoco = paydto.getMyChoco();
+//		yourChoco = paydto.getYourChoco();
 		
 		/* 라벨에 배경이미지 삽입*/
 		JLabel background = new JLabel(new ImageIcon("images/background/홀짝배경.png"));
@@ -57,24 +57,24 @@ public class paymeHand extends JPanel {
 
 		// 내 구슬 개수 레이블 위치 지정
 		myChocoLabel.setBounds(685, 10, 150, 50);
-		myChocoLabel.setText("" + myChoco); // JLabel에 값을 설정
+		myChocoLabel.setText("" + pdto.getMyChoco()); // JLabel에 값을 설정
 		
 		// 상대방 구슬 개수 레이블 위치 지정
 		yourChocoLabel.setBounds(130, 550, 150, 50);
-		yourChocoLabel.setText("" + yourChoco); // JLabel에 값을 설정
+		yourChocoLabel.setText("" + pdto.getYourChoco()); // JLabel에 값을 설정
 
 		// 마우스 클릭 이벤트 처리를 위한 MouseListener 등록
 		this.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				// 마우스 클릭 시, 두 번째 페이지로 전환
-				mf.getContentPane().removeAll(); // 기존 컴포넌트 삭제
-				JPanel nextPage = new payBet(mf); // 새로운 페이지 생성
-				mf.getContentPane().add(nextPage); // 새로운 페이지 추가
-				mf.revalidate(); // 화면 갱신
-				mf.repaint();
+				if ((pdto.getYourChoco() <= 0)) {
+				 changePanel(mf, paymeHand, new payWinPage(mf, pdto));
+				} else if ((pdto.getYourChoco() <= 0)) {
+				 changePanel(mf, paymeHand, new payLosePage(mf, pdto));
+				}else {
+				 changePanel(mf, paymeHand, new payBet(mf, pdto));
+				}
 			}
 		});
-
 
 		/* 컴포넌트들 넣을 패널 생성 */
 		this.setLayout(null);

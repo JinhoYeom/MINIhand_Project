@@ -1,19 +1,14 @@
 package com.greedy.paygame.view.pages;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.Timer;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.greedy.common.MainFrame;
+import com.greedy.paygame.view.DTO.payDTO;
 
 
 
@@ -23,7 +18,7 @@ public class payYougive extends JPanel {
 	private JPanel payYougive;
 	
 	
-	public payYougive(MainFrame mf) {
+	public payYougive(MainFrame mf, payDTO pdto) {
 	
 		
 
