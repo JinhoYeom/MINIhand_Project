@@ -20,7 +20,7 @@ public class payMtwo extends JPanel {
 	private int yourChoco;
 	public static String result3;
 
-	public  payMtwo(MainFrame mf) {
+	public  payMtwo(MainFrame mf, payDTO pdto) {
 
 		/*현재 프레임 및 클래스 set*/
 		this.mf = mf;
@@ -68,16 +68,16 @@ public class payMtwo extends JPanel {
 				String whoNum = (randomNumber % 2 == 0) ? "짝" : "홀";
 
 				if (whoNum.equals("홀")) {
-					myChoco = -randomNumber;
-		            yourChoco = +randomNumber;
+					pdto.setMyChoco(pdto.getMyChoco()-randomNumber);
+		            pdto.setYourChoco(pdto.getYourChoco()+randomNumber);
 		            result3 = "lose";
-					changePanel(mf, payMtwo, new payYoneanswer(mf));
+					changePanel(mf, payMtwo, new payYoneanswer(mf, pdto));
 					
 				} else {
-					myChoco = +randomNumber;
-		            yourChoco = -randomNumber;
+					pdto.setMyChoco(pdto.getMyChoco()+randomNumber);
+		            pdto.setYourChoco(pdto.getYourChoco()-randomNumber);
 		            result3 = "win";
-					changePanel(mf, payMtwo, new payYtwoanswer(mf));
+					changePanel(mf, payMtwo, new payYtwoanswer(mf, pdto));
 				}
 			}
 		});

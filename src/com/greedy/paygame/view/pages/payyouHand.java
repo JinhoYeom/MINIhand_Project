@@ -1,5 +1,7 @@
 package com.greedy.paygame.view.pages;
 
+import static com.greedy.common.constant.changePanel;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
@@ -17,27 +19,19 @@ public class payyouHand extends JPanel {
 
 	private MainFrame mf;
 	private JPanel payyouHand;
-	public int myChoco;
-	public int yourChoco; 
+	
 	
 	
 	// 내 초코비 표시 레이블
-	private JLabel myChocoLabel = new JLabel("" + myChoco);
+	private JLabel myChocoLabel = new JLabel();
 	// 상대방 초코비 표시 레이블
-	private JLabel yourChocoLabel = new JLabel("" + yourChoco);
+	private JLabel yourChocoLabel = new JLabel();
 
-	public payyouHand(MainFrame mf) {
+	public payyouHand(MainFrame mf, payDTO pdto) {
 
 		/*현재 프레임 및 클래스 set*/
 		this.mf = mf;
 		this.payyouHand = this;
-		
-		/* payDTO 인스턴스 생성 */
-		payDTO paydto = new payDTO();
-
-		/* payDTO에서 myChoco와 yourChoco값을 가져와서 클래스 변수에 저장 */
-		myChoco = paydto.getMyChoco();
-		yourChoco = paydto.getYourChoco();
 
 		/* 라벨에 배경이미지 삽입*/
 		JLabel background = new JLabel(new ImageIcon("images/background/홀짝배경.png"));
@@ -56,19 +50,22 @@ public class payyouHand extends JPanel {
 		
 			// 내 구슬 개수 레이블 위치 지정
 			myChocoLabel.setBounds(685, 10, 150, 50);
+			myChocoLabel.setText("" + pdto.getMyChoco());
 			
 			// 상대방 구슬 개수 레이블 위치 지정
 			yourChocoLabel.setBounds(130, 550, 150, 50);
+			yourChocoLabel.setText("" + pdto.getYourChoco());
 
 			// 마우스 클릭 이벤트 처리를 위한 MouseListener 등록
 			this.addMouseListener(new MouseAdapter() {
 				public void mouseClicked(MouseEvent e) {
-					// 마우스 클릭 시, 두 번째 페이지로 전환
-					mf.getContentPane().removeAll(); // 기존 컴포넌트 삭제
-					JPanel nextPage = new payChoice(mf); // 새로운 페이지 생성
-					mf.getContentPane().add(nextPage); // 새로운 페이지 추가
-					mf.revalidate(); // 화면 갱신
-					mf.repaint();
+					if ((pdto.getYourChoco() <= 0)) {
+					 changePanel(mf, payyouHand, new payWinPage(mf, pdto));
+					} else if ((pdto.getYourChoco() <= 0)) {
+					 changePanel(mf, payyouHand, new payLosePage(mf, pdto));
+					} else {
+					 changePanel(mf, payyouHand, new payChoice(mf, pdto));
+					}
 				}
 			});
 

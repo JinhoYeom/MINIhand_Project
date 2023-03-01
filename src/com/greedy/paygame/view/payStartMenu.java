@@ -53,7 +53,7 @@ public class payStartMenu extends JPanel {
 		startBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				changePanel(mf, paystartMenu, new paymeHand(mf));
+				changePanel(mf, paystartMenu, new paymeHand(mf, new payDTO()));
 				System.out.println("게임시작 가능, 맵 화면 이동");
 			}
 		});

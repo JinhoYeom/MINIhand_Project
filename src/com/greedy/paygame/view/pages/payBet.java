@@ -16,6 +16,7 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.PlainDocument;
 
 import com.greedy.common.MainFrame;
+import com.greedy.paygame.view.DTO.payDTO;
 
 public class payBet extends JPanel {
 
@@ -24,7 +25,7 @@ public class payBet extends JPanel {
 	public JTextField chocoNumField; // 초코비 개수 입력받는 필드
 	public static int ChocoNum;
 
-	public payBet(MainFrame mf) {
+	public payBet(MainFrame mf, payDTO pdto) {
 
 		/*현재 프레임 및 클래스 set*/
 		this.mf = mf;
@@ -55,7 +56,7 @@ public class payBet extends JPanel {
 				ChocoNum = Integer.parseInt(chocoNumField.getText());
 				// 초코비 개수 가져오기
 				// TODO: 걸기 기능 구현
-				changePanel(mf, payBet, new payStory(mf));
+				changePanel(mf, payBet, new payStory(mf, pdto));
 				System.out.println("스토리로 이동합니다.");
 			}
 		});

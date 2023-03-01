@@ -15,24 +15,17 @@ import com.greedy.paygame.view.DTO.payDTO;
 public class payMone extends JPanel {
 
 	private MainFrame mf;
-	private JPanel payMone;
-	private int myChoco;
-	private int yourChoco;	
+	private JPanel payMone;	
 	public static String result4;
 
 
-	public  payMone(MainFrame mf) {
+	public  payMone(MainFrame mf, payDTO pdto) {
 
 		/*현재 프레임 및 클래스 set*/
 		this.mf = mf;
 		this.payMone = this;
 		
-		/* payDTO 인스턴스 생성 */
-		payDTO paydto = new payDTO();
-
-		/* payDTO에서 myChoco와 yourChoco값을 가져와서 클래스 변수에 저장 */
-		myChoco = paydto.getMyChoco();
-		yourChoco = paydto.getYourChoco();
+	
 		
 
 		/* 라벨에 배경이미지 삽입*/
@@ -75,15 +68,15 @@ public class payMone extends JPanel {
 		    String whoNum = (randomNumber % 2 == 0) ? "짝" : "홀";
 
 		    if (whoNum.equals("홀")) {
-		    	myChoco = +randomNumber;
-	            yourChoco = -randomNumber;
+		    	pdto.setMyChoco(pdto.getMyChoco()+randomNumber);
+	            pdto.setYourChoco(pdto.getYourChoco()-randomNumber);
 	            result4 = "win";
-		        changePanel(mf, payMone, new payYoneanswer(mf));
+		        changePanel(mf, payMone, new payYoneanswer(mf, pdto));
 		    } else {
-		    	myChoco = -randomNumber;
-	            yourChoco = +randomNumber;
+		    	pdto.setMyChoco(pdto.getMyChoco()-randomNumber);
+	            pdto.setYourChoco(pdto.getYourChoco()+randomNumber);
 	            result4 = "lose";
-		        changePanel(mf, payMone, new payYtwoanswer(mf));
+		        changePanel(mf, payMone, new payYtwoanswer(mf, pdto));
 		    }
 		}
 	});

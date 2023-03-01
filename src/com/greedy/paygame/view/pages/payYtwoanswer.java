@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.greedy.common.MainFrame;
+import com.greedy.paygame.view.DTO.payDTO;
 
 public class payYtwoanswer extends JPanel {
 
@@ -18,7 +19,7 @@ public class payYtwoanswer extends JPanel {
 		public String result3 = payMtwo.getresult3();
 		public String result4 = payMone.getresult4();
 
-		public  payYtwoanswer(MainFrame mf) {
+		public  payYtwoanswer(MainFrame mf, payDTO pdto) {
 
 			/*현재 프레임 및 클래스 set*/
 			this.mf = mf;
@@ -39,13 +40,13 @@ public class payYtwoanswer extends JPanel {
 			this.addMouseListener(new MouseAdapter() {
 				public void mouseClicked(MouseEvent e) {
 					if ("win".equals(result3)) {
-						changePanel(mf, payYtwoanswer, new payYYougive(mf));
+						changePanel(mf, payYtwoanswer, new payYYougive(mf, pdto));
 					} else if("lose".equals(result3)) {
-						changePanel(mf, payYtwoanswer, new payMMegive(mf));
+						changePanel(mf, payYtwoanswer, new payMMegive(mf, pdto));
 					} else if ("lose".equals(result4)) {
-						changePanel(mf, payYtwoanswer, new payMMegive(mf));
+						changePanel(mf, payYtwoanswer, new payMMegive(mf, pdto));
 					} else {
-						changePanel(mf, payYtwoanswer, new payYYougive(mf));
+						changePanel(mf, payYtwoanswer, new payYYougive(mf, pdto));
 					}
 
 

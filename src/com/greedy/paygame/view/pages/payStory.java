@@ -4,20 +4,20 @@ import static com.greedy.common.constant.changePanel;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.Random;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.greedy.common.MainFrame;
+import com.greedy.paygame.view.DTO.payDTO;
 
 public class payStory extends JPanel {
 
 		private MainFrame mf;
 		private JPanel payStory;
 
-		public  payStory(MainFrame mf) {
+		public  payStory(MainFrame mf, payDTO pdto) {
 
 			/*현재 프레임 및 클래스 set*/
 			this.mf = mf;
@@ -64,10 +64,10 @@ public class payStory extends JPanel {
 				    String whoNum = (randomNumber % 2 == 0) ? "짝" : "홀";
 
 				    if (whoNum.equals("홀")) {
-				        changePanel(mf, payStory, new payYone(mf));
+				        changePanel(mf, payStory, new payYone(mf, pdto));
 				        System.out.println("홀로 이동");
 				    } else { 
-				        changePanel(mf, payStory, new payYtwo(mf));
+				        changePanel(mf, payStory, new payYtwo(mf, pdto));
 				        System.out.println("짝로 이동");
 				    }
 				}

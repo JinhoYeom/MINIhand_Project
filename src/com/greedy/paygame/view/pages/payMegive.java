@@ -1,18 +1,15 @@
 package com.greedy.paygame.view.pages;
 
 
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.greedy.common.MainFrame;
-import com.greedy.paygame.view.payStartMenu;
-
-import static com.greedy.common.constant.changePanel;
-
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import com.greedy.paygame.view.DTO.payDTO;
 
 
 public class payMegive extends JPanel {
@@ -20,7 +17,7 @@ public class payMegive extends JPanel {
 	private MainFrame mf;
 	private JPanel payMegive;
 
-	public payMegive(MainFrame mf) {
+	public payMegive(MainFrame mf, payDTO pdto) {
 
 		/*현재 프레임 및 클래스 set*/
 		this.mf = mf;
@@ -46,7 +43,7 @@ public class payMegive extends JPanel {
 			public void mouseClicked(MouseEvent e) {
 				// 마우스 클릭 시, 두 번째 페이지로 전환
 				mf.getContentPane().removeAll(); // 기존 컴포넌트 삭제
-				JPanel nextPage = new payYouget(mf); // 새로운 페이지 생성
+				JPanel nextPage = new payYouget(mf, pdto); // 새로운 페이지 생성
 				mf.getContentPane().add(nextPage); // 새로운 페이지 추가
 				mf.revalidate(); // 화면 갱신
 				mf.repaint();

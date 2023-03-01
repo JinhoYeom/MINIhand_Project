@@ -11,14 +11,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.greedy.common.MainFrame;
-import com.greedy.paygame.view.payStartMenu;
+import com.greedy.paygame.view.DTO.payDTO;
 
 public class payChoice extends JPanel {
 
 		private MainFrame mf;
 		private JPanel payChoice;
 
-		public payChoice(MainFrame mf) {
+		public payChoice(MainFrame mf, payDTO pdto) {
 
 			/*현재 프레임 및 클래스 set*/
 			this.mf = mf;
@@ -36,7 +36,7 @@ public class payChoice extends JPanel {
 			oneBtn.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					changePanel(mf, payChoice, new payMone(mf));
+					changePanel(mf, payChoice, new payMone(mf, pdto));
 					System.out.println("대화로 이동합니다.");
 
 				}
@@ -49,7 +49,7 @@ public class payChoice extends JPanel {
 			twoBtn.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					changePanel(mf, payChoice, new payMtwo(mf));
+					changePanel(mf, payChoice, new payMtwo(mf, pdto));
 					System.out.println("대화로 이동합니다.");
 				}
 			});

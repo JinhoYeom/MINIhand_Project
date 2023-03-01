@@ -1,5 +1,7 @@
 package com.greedy.paygame.view.pages;
 
+import static com.greedy.common.constant.changePanel;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -10,8 +12,7 @@ import javax.swing.JPanel;
 
 import com.greedy.common.MainFrame;
 import com.greedy.paygame.view.payStartMenu;
-
-import static com.greedy.common.constant.changePanel;
+import com.greedy.paygame.view.DTO.payDTO;
 
 
 public class payLosePage extends JPanel {
@@ -19,7 +20,7 @@ public class payLosePage extends JPanel {
 	private MainFrame mf;
 	private JPanel payLosePage;
 
-	public payLosePage(MainFrame mf) {
+	public payLosePage(MainFrame mf, payDTO pdto) {
 
 		/*현재 프레임 및 클래스 set*/
 		this.mf = mf;
@@ -43,9 +44,8 @@ public class payLosePage extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// 여기에 payDTO 초기화 구현.
-				changePanel(mf, payLosePage, new paymeHand(mf));
+				changePanel(mf, payLosePage, new paymeHand(mf, pdto));
 				System.out.println("홀짝게임 메뉴로 이동합니다.");
-
 			}
 		});
 		
