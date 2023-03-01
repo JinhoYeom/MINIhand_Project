@@ -5,18 +5,15 @@ import static com.greedy.common.constant.changePanel;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.greedy.common.MainFrame;
 import com.greedy.paygame.view.GameMenu;
+import com.greedy.sql.MemberController;
 import com.greedy.start.StartMenu;
 
 public class LogIn1 extends JPanel{
@@ -29,6 +26,8 @@ public class LogIn1 extends JPanel{
 				/*현재 프레임 및 클래스 set*/
 				this.mf = mf;
 				this.LogIn1 = this;
+				
+				MemberController memberController = new MemberController();
 
 		    /* JPanel 생성 */
 		    JPanel panel = new JPanel(null);
@@ -127,3 +126,6 @@ public class LogIn1 extends JPanel{
 
 			}
 		}
+
+
+

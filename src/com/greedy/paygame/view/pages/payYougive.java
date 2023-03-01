@@ -52,7 +52,7 @@ public class payYougive extends JPanel {
 			public void mouseClicked(MouseEvent e) {
 				// 마우스 클릭 시, 두 번째 페이지로 전환
 				mf.getContentPane().removeAll(); // 기존 컴포넌트 삭제
-				JPanel nextPage = new payMeget(mf); // 새로운 페이지 생성
+				JPanel nextPage = new payMeget(mf, pdto); // 새로운 페이지 생성
 				mf.getContentPane().add(nextPage); // 새로운 페이지 추가
 				mf.revalidate(); // 화면 갱신
 				mf.repaint();
