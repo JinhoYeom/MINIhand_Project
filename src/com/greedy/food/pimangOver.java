@@ -2,6 +2,8 @@ package com.greedy.food;
 
 import static com.greedy.common.constant.changePanel;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -28,6 +30,8 @@ public class pimangOver extends JPanel {
 		JLabel background = new JLabel(new ImageIcon("images/background/피망게임종료배경화면.png"));
 		background.setBounds(0, 0, 750, 650);
 		
+		JLabel nowscore = new JLabel("0");
+		nowscore.setBounds(340, 175, 100, 100);
 		
 		/* 도시락게임 종료화면 */
 		JLabel overPage = new JLabel(new ImageIcon("images/select/피망게임종료창.png"));
@@ -58,12 +62,18 @@ public class pimangOver extends JPanel {
 			}
 		});
 		
+		/* 폰트 설정 */
+		Font scorefont = new Font("Rix짱구 M", Font.PLAIN, 40);
 		
 		/* 컴포넌트들 넣을 패널 생성 */
 		this.setLayout(null);
 		this.setBounds(0, 0, 750, 650);
+		
+		/* 폰트 삽입 */
+		nowscore.setFont(scorefont);
 
 		/* 패널에 컴포넌트들 삽입 */
+		this.add(nowscore);
 		this.add(retryBtn);
 		this.add(quitBtn);
 		this.add(overPage);

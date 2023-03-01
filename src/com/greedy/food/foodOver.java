@@ -2,6 +2,7 @@ package com.greedy.food;
 
 import static com.greedy.common.constant.changePanel;
 
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -14,9 +15,25 @@ import com.greedy.common.MainFrame;
 import com.greedy.paygame.view.GameMenu;
 
 public class foodOver extends JPanel {
-
+	
 	private MainFrame mf;
 	private JPanel foodOver;
+	
+	private static int Score;
+	
+	public static void getScore(int foodScore) {
+		
+		Score = foodScore;
+		
+	}
+	
+	String nowScore = Integer.toString(Score);
+	
+	private JLabel getScore = new JLabel(nowScore);
+	
+	
+	
+	
 
 	public foodOver(MainFrame mf) {
 
@@ -28,6 +45,8 @@ public class foodOver extends JPanel {
 		JLabel background = new JLabel(new ImageIcon("images/background/도시락게임배경.png"));
 		background.setBounds(0, 0, 740, 620);
 		
+		/* 이번 게임에서 얻은 점수 표시*/
+		getScore.setBounds(340, 175, 100, 100);
 		
 		/* 도시락게임 종료화면 */
 		JLabel overPage = new JLabel(new ImageIcon("images/select/도시락게임종료창.png"));
@@ -58,12 +77,18 @@ public class foodOver extends JPanel {
 			}
 		});
 		
+		/* 폰트 설정 */
+		Font scorefont = new Font("Rix짱구 M", Font.PLAIN, 40);
 		
 		/* 컴포넌트들 넣을 패널 생성 */
 		this.setLayout(null);
 		this.setBounds(0, 0, 750, 650);
+		
+		/* 폰트 삽입 */
+		getScore.setFont(scorefont);
 
 		/* 패널에 컴포넌트들 삽입 */
+		this.add(getScore);
 		this.add(retryBtn);
 		this.add(quitBtn);
 		this.add(overPage);
@@ -78,6 +103,7 @@ public class foodOver extends JPanel {
 		/* 배경이미지 레이어위치 맨뒤로 보내기 */
 		mf.getLayeredPane().setLayer(background, 0);
 		}
+
 		
 
 }
