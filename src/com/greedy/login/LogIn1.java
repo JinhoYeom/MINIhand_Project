@@ -13,7 +13,6 @@ import javax.swing.JPanel;
 
 import com.greedy.common.MainFrame;
 import com.greedy.paygame.view.GameMenu;
-import com.greedy.sql.MemberController;
 import com.greedy.start.StartMenu;
 
 public class LogIn1 extends JPanel{
@@ -27,7 +26,6 @@ public class LogIn1 extends JPanel{
 				this.mf = mf;
 				this.LogIn1 = this;
 				
-				MemberController memberController = new MemberController();
 
 		    /* JPanel 생성 */
 		    JPanel panel = new JPanel(null);

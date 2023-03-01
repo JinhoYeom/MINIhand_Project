@@ -2,43 +2,66 @@ package com.greedy.DTO;
 
 public class MemberDTO {
 	int memberCode;
-	int	memberId;
-	int memberpwd;
-	String memberName;
-	public MemberDTO(int memberCode, int memberId, int memberpwd, String memberName) {
+	String	memberId;
+	String memberpwd;
+	int memberscore;
+
+
+	public MemberDTO(){}
+
+
+	public MemberDTO(int memberCode, String memberId, String memberpwd, int memberscore) {
 		super();
 		this.memberCode = memberCode;
 		this.memberId = memberId;
 		this.memberpwd = memberpwd;
-		this.memberName = memberName;
+		this.memberscore = memberscore;
 	}
+
+
 	public int getMemberCode() {
 		return memberCode;
 	}
+
+
 	public void setMemberCode(int memberCode) {
 		this.memberCode = memberCode;
 	}
-	public int getMemberId() {
+
+
+	public String getMemberId() {
 		return memberId;
 	}
-	public void setMemberId(int memberId) {
+
+
+	public void setMemberId(String memberId) {
 		this.memberId = memberId;
 	}
-	public int getMemberpwd() {
+
+
+	public String getMemberpwd() {
 		return memberpwd;
 	}
-	public void setMemberpwd(int memberpwd) {
+
+
+	public void setMemberpwd(String memberpwd) {
 		this.memberpwd = memberpwd;
 	}
-	public String getMemberName() {
-		return memberName;
+
+
+	public int getMemberscore() {
+		return memberscore;
 	}
-	public void setMemberName(String memberName) {
-		this.memberName = memberName;
+
+
+	public void setMemberscore(int memberscore) {
+		this.memberscore = memberscore;
 	}
+
+
 	@Override
 	public String toString() {
 		return "MemberDTO [memberCode=" + memberCode + ", memberId=" + memberId + ", memberpwd=" + memberpwd
-				+ ", memberName=" + memberName + "]";
+				+ ", memberscore=" + memberscore + "]";
 	}
 }
