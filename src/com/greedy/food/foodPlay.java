@@ -128,7 +128,6 @@ public class foodPlay extends JPanel {
 				boolean contains = false;
 				
 				if(check[0].equals("피망")) {
-					foodScore = 0;
 		        	changePanel(mf, foodPlay, new pimangInsert(mf));
 					System.out.println("짱구가 싫어하는 피망을 선택하였습니다.");
 				}
@@ -292,6 +291,7 @@ public class foodPlay extends JPanel {
 		        	make4.setIcon(null);
      	
 		        } else {
+		        	foodOver.getScore(foodScore);
 		        	changePanel(mf, foodPlay, new foodOver(mf));
 					System.out.println("도시락 게임이 종료되었습니다.");
 					
