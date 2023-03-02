@@ -54,13 +54,13 @@ public class payYtwo extends JPanel {
 				int chocoNum = payBet.getChocoNum();
 				String whoNum = (chocoNum % 2 == 0) ? "짝" : "홀";
 				if (whoNum.equals("홀")) {
-					pdto.setMyChoco(pdto.getMyChoco()+chocoNum);
-		            pdto.setYourChoco(pdto.getYourChoco()-chocoNum);
+					pdto.setMyChoco(pdto.getMyChoco()-chocoNum);
+		            pdto.setYourChoco(pdto.getYourChoco()+chocoNum);
 		            result2 = "win";
 		            changePanel(mf, payYtwo, new payMoneanswer(mf, pdto));
 		        } else {
-		        	pdto.setMyChoco(pdto.getMyChoco()-chocoNum);
-		            pdto.setYourChoco(pdto.getYourChoco()+chocoNum);
+		        	pdto.setMyChoco(pdto.getMyChoco()+chocoNum);
+		            pdto.setYourChoco(pdto.getYourChoco()-chocoNum);
 		            result2 = "lose";
 		            changePanel(mf, payYtwo, new payMtwoanswer(mf, pdto));
 		        }

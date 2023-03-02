@@ -60,9 +60,9 @@ public class payyouHand extends JPanel {
 			this.addMouseListener(new MouseAdapter() {
 				public void mouseClicked(MouseEvent e) {
 					if ((pdto.getYourChoco() <= 0)) {
-					 changePanel(mf, payyouHand, new payWinPage(mf, pdto));
-					} else if ((pdto.getYourChoco() <= 0)) {
 					 changePanel(mf, payyouHand, new payLosePage(mf, pdto));
+					} else if ((pdto.getMyChoco() <= 0)) {
+					 changePanel(mf, payyouHand, new payWinPage(mf, pdto));
 					} else {
 					 changePanel(mf, payyouHand, new payChoice(mf, pdto));
 					}

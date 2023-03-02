@@ -68,13 +68,13 @@ public class payMone extends JPanel {
 		    String whoNum = (randomNumber % 2 == 0) ? "짝" : "홀";
 
 		    if (whoNum.equals("홀")) {
-		    	pdto.setMyChoco(pdto.getMyChoco()+randomNumber);
-	            pdto.setYourChoco(pdto.getYourChoco()-randomNumber);
+		    	pdto.setMyChoco(pdto.getMyChoco()-randomNumber);
+	            pdto.setYourChoco(pdto.getYourChoco()+randomNumber);
 	            result4 = "win";
 		        changePanel(mf, payMone, new payYoneanswer(mf, pdto));
 		    } else {
-		    	pdto.setMyChoco(pdto.getMyChoco()-randomNumber);
-	            pdto.setYourChoco(pdto.getYourChoco()+randomNumber);
+		    	pdto.setMyChoco(pdto.getMyChoco()+randomNumber);
+	            pdto.setYourChoco(pdto.getYourChoco()-randomNumber);
 	            result4 = "lose";
 		        changePanel(mf, payMone, new payYtwoanswer(mf, pdto));
 		    }
