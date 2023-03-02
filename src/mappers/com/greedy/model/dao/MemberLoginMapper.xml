@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.greedy.member.dao.MemberLoginMapper">
+
+	 <resultMap type="com.greedy.DTO.MemberDTO" id="memberResultMap">
+	 	<id property="memberId" column="MEMBER_ID"/>
+	 	<result property="MemberPwd" column="MEMBER_PWD"/>
+	 	<result property="memberName" column="MEMBER_NAME"/>
+
+	 </resultMap>
+
+	<select id="loginCheckMember" parameterType="com.greedy.DTO.MemberDTO" resultMap="memberResultMap">
+		 SELECT
+	 	       A.MEMBER_ID
+	 	     , A.MEMBER_PWD
+	 	     , A.MEMBER_NAME
+	 	  FROM MEMBER A
+	 	  WHERE A.EMAIL = #{ memberId }
+	 	  	AND A.PWD = #{ memberPwd }
+	 	  	AND A.DEAC_YN = 'N'
+	</select>
+	
+</mapper>
