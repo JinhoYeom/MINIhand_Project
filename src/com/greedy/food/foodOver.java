@@ -19,7 +19,7 @@ public class foodOver extends JPanel {
 	private MainFrame mf;
 	private JPanel foodOver;
 	
-	private static int Score;
+	private static int Score = 0;
 	
 	public static void getScore(int foodScore) {
 		

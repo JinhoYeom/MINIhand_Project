@@ -6,7 +6,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
-import com.greedy.food.foodPlay;
+import com.greedy.start.StartMenu;
 
 
 
@@ -21,7 +21,7 @@ public class MainFrame extends JFrame {
 		
 
 
-//		new StartMenu(this);     //시작
+		new StartMenu(this);     //시작
 //		new payStartMenu(this);
 //	  	new GameMenu(this);
 
@@ -37,7 +37,7 @@ public class MainFrame extends JFrame {
 //		new loading(this);
 //		new payStory(this);
 //		new payYtwoanswer(this);
-		new foodPlay(this);	
+//		new foodPlay(this);	
 //		new payYouget(this);
 //		new payyouHand(this);
 		
